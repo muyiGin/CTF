@@ -1,0 +1,97 @@
+hint1 = {11,22,33,44}
+hint2 = {0x7c12e17f,0x43c2b691,0xa8d8d6ce,0x6280ecc8,0xe6e18c6e,0x20d6dfa3,0xf2dd40c,0xb819b77e,0xb9258436,0x5d3e88b6}
+.text:0000000000401550                               ; unsigned int *__fastcall encrypt(unsigned int *, unsigned int *)
+.text:0000000000401550                               public _Z7encryptPjS_
+.text:0000000000401550                               _Z7encryptPjS_ proc near                ; CODE XREF: main+FC↓p
+.text:0000000000401550                                                                       ; DATA XREF: .pdata:000000000040A06C↓o
+.text:0000000000401550
+.text:0000000000401550                               var_14= dword ptr -14h
+.text:0000000000401550                               var_10= dword ptr -10h
+.text:0000000000401550                               var_C= dword ptr -0Ch
+.text:0000000000401550                               var_8= dword ptr -8
+.text:0000000000401550                               var_4= dword ptr -4
+.text:0000000000401550                               arg_0= qword ptr  10h
+.text:0000000000401550                               arg_8= qword ptr  18h
+.text:0000000000401550
+.text:0000000000401550 55                            push    rbp
+.text:0000000000401551 48 89 E5                      mov     rbp, rsp
+.text:0000000000401554 48 83 EC 20                   sub     rsp, 20h
+.text:0000000000401558 48 89 4D 10                   mov     [rbp+arg_0], rcx
+.text:000000000040155C 48 89 55 18                   mov     [rbp+arg_8], rdx
+.text:0000000000401560 C7 45 EC B9 79 37 9E          mov     [rbp+var_14], 9E3779B9h
+.text:0000000000401567 48 8B 45 10                   mov     rax, [rbp+arg_0]
+.text:000000000040156B 8B 00                         mov     eax, [rax]
+.text:000000000040156D 89 45 FC                      mov     [rbp+var_4], eax
+.text:0000000000401570 48 8B 45 10                   mov     rax, [rbp+arg_0]
+.text:0000000000401574 8B 40 04                      mov     eax, [rax+4]
+.text:0000000000401577 89 45 F8                      mov     [rbp+var_8], eax
+.text:000000000040157A C7 45 F4 00 00 00 00          mov     [rbp+var_C], 0
+.text:0000000000401581 C7 45 F0 00 00 00 00          mov     [rbp+var_10], 0
+.text:0000000000401581
+.text:0000000000401588
+.text:0000000000401588                               loc_401588:                             ; CODE XREF: encrypt(uint *,uint *)+B2↓j
+.text:0000000000401588 83 7D F0 1F                   cmp     [rbp+var_10], 1Fh
+.text:000000000040158C 7F 76                         jg      short loc_401604
+.text:000000000040158C
+.text:000000000040158E 8B 45 EC                      mov     eax, [rbp+var_14]
+.text:0000000000401591 01 45 F4                      add     [rbp+var_C], eax
+.text:0000000000401594 8B 45 F8                      mov     eax, [rbp+var_8]
+.text:0000000000401597 C1 E0 04                      shl     eax, 4
+.text:000000000040159A 89 C2                         mov     edx, eax
+.text:000000000040159C 48 8B 45 18                   mov     rax, [rbp+arg_8]
+.text:00000000004015A0 8B 00                         mov     eax, [rax]
+.text:00000000004015A2 01 C2                         add     edx, eax
+.text:00000000004015A4 8B 4D F8                      mov     ecx, [rbp+var_8]
+.text:00000000004015A7 8B 45 F4                      mov     eax, [rbp+var_C]
+.text:00000000004015AA 01 C8                         add     eax, ecx
+.text:00000000004015AC 31 C2                         xor     edx, eax
+.text:00000000004015AE 8B 45 F8                      mov     eax, [rbp+var_8]
+.text:00000000004015B1 C1 E8 05                      shr     eax, 5
+.text:00000000004015B4 89 C1                         mov     ecx, eax
+.text:00000000004015B6 48 8B 45 18                   mov     rax, [rbp+arg_8]
+.text:00000000004015BA 48 83 C0 04                   add     rax, 4
+.text:00000000004015BE 8B 00                         mov     eax, [rax]
+.text:00000000004015C0 01 C8                         add     eax, ecx
+.text:00000000004015C2 31 D0                         xor     eax, edx
+.text:00000000004015C4 01 45 FC                      add     [rbp+var_4], eax
+.text:00000000004015C7 8B 45 FC                      mov     eax, [rbp+var_4]
+.text:00000000004015CA C1 E0 04                      shl     eax, 4
+.text:00000000004015CD 89 C2                         mov     edx, eax
+.text:00000000004015CF 48 8B 45 18                   mov     rax, [rbp+arg_8]
+.text:00000000004015D3 48 83 C0 08                   add     rax, 8
+.text:00000000004015D7 8B 00                         mov     eax, [rax]
+.text:00000000004015D9 01 C2                         add     edx, eax
+.text:00000000004015DB 8B 4D FC                      mov     ecx, [rbp+var_4]
+.text:00000000004015DE 8B 45 F4                      mov     eax, [rbp+var_C]
+.text:00000000004015E1 01 C8                         add     eax, ecx
+.text:00000000004015E3 31 C2                         xor     edx, eax
+.text:00000000004015E5 8B 45 FC                      mov     eax, [rbp+var_4]
+.text:00000000004015E8 C1 E8 05                      shr     eax, 5
+.text:00000000004015EB 89 C1                         mov     ecx, eax
+.text:00000000004015ED 48 8B 45 18                   mov     rax, [rbp+arg_8]
+.text:00000000004015F1 48 83 C0 0C                   add     rax, 0Ch
+.text:00000000004015F5 8B 00                         mov     eax, [rax]
+.text:00000000004015F7 01 C8                         add     eax, ecx
+.text:00000000004015F9 31 D0                         xor     eax, edx
+.text:00000000004015FB 01 45 F8                      add     [rbp+var_8], eax
+.text:00000000004015FE 83 45 F0 01                   add     [rbp+var_10], 1
+.text:0000000000401602 EB 84                         jmp     short loc_401588
+.text:0000000000401602
+.text:0000000000401604                               ; ---------------------------------------------------------------------------
+.text:0000000000401604
+.text:0000000000401604                               loc_401604:                             ; CODE XREF: encrypt(uint *,uint *)+3C↑j
+.text:0000000000401604 48 8B 45 10                   mov     rax, [rbp+arg_0]
+.text:0000000000401608 8B 55 FC                      mov     edx, [rbp+var_4]
+.text:000000000040160B 89 10                         mov     [rax], edx
+.text:000000000040160D 48 8B 45 10                   mov     rax, [rbp+arg_0]
+.text:0000000000401611 48 83 C0 04                   add     rax, 4
+.text:0000000000401615 8B 55 F8                      mov     edx, [rbp+var_8]
+.text:0000000000401618 89 10                         mov     [rax], edx
+.text:000000000040161A 90                            nop
+.text:000000000040161B 48 83 C4 20                   add     rsp, 20h
+.text:000000000040161F 5D                            pop     rbp
+.text:0000000000401620 C3                            retn
+.text:0000000000401620
+.text:0000000000401620                               _Z7encryptPjS_ endp
+
+
